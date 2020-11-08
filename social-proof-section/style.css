@@ -1,0 +1,355 @@
+/* Reset */
+*,
+*::before,
+*::after {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/*--*--*--*--*--*--*-- Utility Components --*--*--*--*--*--*--*/
+:root {
+   font-size: 62.5%;
+   /* 15px */
+
+   /*--*-- Custom Porperties --*--*/
+   /*-- Color --*/
+   /* Primary */
+   --very-dark-magenta: hsl(300, 43%, 22%);
+   --soft-pink: hsl(333, 80%, 67%);
+   /* Neutral */
+   --dark-grayish-magenta: hsl(303, 10%, 53%);
+   --light-grayish-magenta: hsl(301, 23%, 96%); 
+   --white: hsl(0, 0%, 100%);
+}
+
+/*--*--*--*--*--*--*-- Main Styling --*--*--*--*--*--*--*/
+body {
+   background: url("images/bg-pattern-top-desktop.svg") no-repeat, url("images/bg-pattern-bottom-desktop.svg") no-repeat bottom;
+   font-family: "Spartan", sans-serif;
+}
+
+/*--*--*--*-- Social Proof Section / s-p --*--*--*--*/
+section#social-proof {
+   display: grid;
+   grid-template-rows: repeat(2, 1fr);
+   grid-template-columns: 1fr repeat(2, minmax(60rem, 1fr)) 1fr;
+   justify-content: center;
+}
+
+/*--*-- Introduction / intro --*--*/
+.s-p__intro {
+   grid-area: 1 / 2 / 2 / 3;
+   width: 45rem;
+   margin: 12.5rem 3rem 3.6rem 4.4rem;
+}
+
+.s-p__intro h1 {
+   color: var(--very-dark-magenta);
+   font-size: 4.8rem;
+   margin-bottom: 1.5rem;
+}
+
+.s-p__intro p {
+   color: var(--dark-grayish-magenta);
+   font-size: 1.5rem;
+   line-height: 1.5;
+}
+
+/*--*-- Rating Cards / rating-cards --*--*/
+.s-p__rating-cards {
+   grid-area: 1 / 3 / 2 / 4;
+   margin: 12.5rem 4.4rem 3.6rem 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-self: center;
+}
+
+.s-p__rating-cards--card {
+   background-color: var(--light-grayish-magenta);
+   border-radius: 0.8rem;
+   width: 44.5rem;
+   height: 5.6rem;
+   margin-left: 1.5rem;
+   margin-bottom: 1.6rem;
+   display: flex;
+   align-items: center;
+}
+
+.s-p__rating-cards--card:nth-child(2) {
+   margin-left: 6.2rem;
+}
+
+.s-p__rating-cards--card:last-child {
+   margin-left: 11rem;
+}
+
+.s-p__rating-cards--card__stars {
+   margin: 0 3.2rem;
+}
+
+.s-p__rating-cards--card img {
+   width: 1.6rem;
+   margin-left: 0.1rem;
+}
+
+.s-p__rating-cards--card p {
+   color: var(--very-dark-magenta);
+   font-size: 1.3rem;
+   font-weight: 700;
+}
+
+/*--*-- Testimonial Cards / tesimonial-cards --*--*/
+.s-p__tesimonial-cards {
+   grid-area: 2 / 2 / 3 / 4;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+.s-p__tesimonial-cards--card {
+   background-color: var(--very-dark-magenta);
+   border-radius: 0.8rem;
+   width: 35rem;
+   height: 23.4rem;
+   margin: 3.4rem 1.5rem 0 1.5rem;
+   padding: 4rem 3rem 4.5rem 3rem;
+   transition: transform 0.35s ease-in-out;
+}
+
+.s-p__tesimonial-cards--card:nth-child(2) {
+   margin-top: 4.5rem;
+}
+
+.s-p__tesimonial-cards--card:last-child {
+   margin-top: 6.6rem;
+}
+
+.s-p__tesimonial-cards--card:hover {
+   transform: scale(1.05);
+}
+
+.s-p__tesimonial-cards--card > div {
+   margin-bottom: 2rem;
+   display: flex;
+   align-items: center;
+}
+
+.s-p__tesimonial-cards--card img {
+   border-radius: 50%;
+   width: 4rem;
+   height: 4rem;
+   object-fit: cover;
+   margin-right: 2.2rem;
+}
+
+.s-p__tesimonial-cards--card h5 {
+   color: var(--white);
+   font-size: 1.3rem;
+   margin-bottom: 0.5rem;
+}
+
+.s-p__tesimonial-cards--card h6 {
+   color: var(--soft-pink);
+   font-size: 1.3rem;
+   font-weight: 500;
+}
+
+.s-p__tesimonial-cards--card p {
+   color: var(--white);
+   font-size: 1.3rem;
+   line-height: 1.8;
+}
+
+/*--*--*--*-- Attribution --*--*--*--*/
+.attribution {
+   grid-area: 2 / 2 / 3 / 4;
+   justify-self: center;
+   align-self: end;
+   margin-bottom: 4rem;
+   color: var(--very-dark-magenta);
+   font-size: 1.2rem;
+}
+
+.attribution a {
+   text-decoration: none;
+   color: var(--very-dark-magenta);
+
+}
+
+.attribution a:hover {
+   color: var(--dark-grayish-magenta);
+}
+
+/*--*--*--*--*--*--*-- max-width: 1200px --*--*--*--*--*--*--*/
+@media screen and (max-width: 1200px) {
+/*--*--*--*-- Social Proof Section / s-p --*--*--*--*/
+section#social-proof {
+   grid-template-rows: max-content;
+   grid-template-columns: repeat(2, minmax(50rem, 1fr)) ;
+}
+
+/*--*-- Introduction / intro --*--*/
+.s-p__intro {
+   grid-column: 1 / 2;
+   width: 40rem;
+   margin-top: 10rem;
+   justify-self: center;
+}
+
+.s-p__intro h1 {
+   font-size: calc(2.2rem + 2vw);
+}
+ 
+/*--*-- Rating Cards / rating-cards --*--*/
+.s-p__rating-cards {
+   grid-column: 2 / 3;
+   margin-top: 10rem;
+}
+
+.s-p__rating-cards--card {
+   width: 40rem;
+   margin-left: 0.75rem;
+}
+
+.s-p__rating-cards--card:nth-child(2) {
+      margin-left: 3.1rem;
+}
+
+.s-p__rating-cards--card:last-child {
+   margin-left: 5.5rem;
+}
+
+/*--*-- Testimonial Cards / tesimonial-cards --*--*/
+.s-p__tesimonial-cards {
+   grid-area: 2 / 1 / 3 / 3;
+   margin: 1.5rem 2rem;
+}
+
+.s-p__tesimonial-cards--card,
+.s-p__tesimonial-cards--card:nth-child(2),
+.s-p__tesimonial-cards--card:last-child {
+  margin: 0 1rem 2rem;
+}
+
+/*--*--*--*-- Attribution --*--*--*--*/
+.attribution {
+   grid-area: 3 / 1 / 4 / 3;
+   margin-top: 2rem;
+}
+}
+
+/*--*--*--*--*--*--*-- max-width: 980px --*--*--*--*--*--*--*/
+@media screen and (max-width: 980px) {
+/*--*--*--*-- Social Proof Section / s-p --*--*--*--*/
+section#social-proof {
+   grid-template-columns: min-content;
+}
+
+/*--*-- Introduction / intro --*--*/
+.s-p__intro {
+   width: 36rem;
+   margin-right: 2rem;
+}
+
+.s-p__intro h1 {
+   font-size: calc(2rem + 2vw);
+}
+
+/*--*-- Rating Cards / rating-cards --*--*/
+.s-p__rating-cards {
+   justify-self: center;
+}
+
+.s-p__rating-cards--card,
+.s-p__rating-cards--card:nth-child(2),
+.s-p__rating-cards--card:last-child {
+   width: 37rem;
+   margin-left: 0;
+}
+
+.s-p__rating-cards--card__stars {
+   margin: 0 2.3rem;
+}
+
+/*--*-- Testimonial Cards / tesimonial-cards --*--*/
+.s-p__tesimonial-cards {
+   grid-row: 3 / 4;
+}
+
+/*--*--*--*-- Attribution --*--*--*--*/
+.attribution {
+   grid-row: 4 / 5;
+}
+}
+
+/*--*--*--*--*--*--*-- max-width: 860px --*--*--*--*--*--*--*/
+@media screen and (max-width: 860px) {
+/*--*-- Introduction / intro --*--*/
+.s-p__intro {
+   margin-bottom: 3rem;
+   text-align: center;
+}
+
+.s-p__intro h1 {
+   font-size: 3.2rem;
+   margin-bottom: 2.4rem;
+}
+
+/*--*-- Rating Cards / rating-cards --*--*/
+.s-p__rating-cards {
+   grid-area: 2 / 1 / 3 / 2;
+   margin: 0 3rem;
+}
+
+/*--*-- Testimonial Cards / tesimonial-cards --*--*/
+.s-p__tesimonial-cards {
+   grid-column: 1 / 2;
+}
+
+.s-p__tesimonial-cards--card,
+.s-p__tesimonial-cards--card:nth-child(2),
+.s-p__tesimonial-cards--card:last-child {
+  margin: 2rem 1rem 0.5rem;
+}
+}
+
+/*--*--*--*--*--*--*-- max-width: 450px --*--*--*--*--*--*--*/
+@media screen and (max-width: 450px) {
+   /*--*-- Introduction / intro --*--*/
+   .s-p__intro {
+      margin: 8rem 2rem 4rem;
+      width: 34rem;
+   }
+
+   /*--*-- Rating Cards / rating-cards --*--*/
+   .s-p__rating-cards {
+      margin: 0 5rem;
+   }
+
+   .s-p__rating-cards--card,
+   .s-p__rating-cards--card:nth-child(2),
+   .s-p__rating-cards--card:last-child {
+      width: 32.7rem;
+      height: 7.8rem;
+      flex-direction: column;
+      justify-content: center;
+   }
+
+   .s-p__rating-cards--card__stars {
+      margin-bottom: 1rem;
+   }
+
+   /*--*-- Testimonial Cards / tesimonial-cards --*--*/
+   .s-p__tesimonial-cards--card:hover {
+      transform: scale(1.02);
+   }
+
+   .s-p__tesimonial-cards--card,
+   .s-p__tesimonial-cards--card:nth-child(2),
+   .s-p__tesimonial-cards--card:last-child {
+      width: 32rem;
+      height: 24rem;
+   }
+   }
