@@ -1,0 +1,273 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Utitly Components */
+:root {
+  font-size: 62.5%;
+  font-family: "Josefin Sans", sans-serif;
+
+  /* Color */
+  --desaturated-red: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+  --grayish-red-d: hsl(0, 6%, 24%);
+  --gradient-white-pink: hsl(0, 0%, 100%), hsl(0, 100%, 98%);
+  --gradient-pink-red: hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+}
+
+/*-*-*-*-*- Main Styling -*-*-*-*-*/
+body {
+  height: 100vh;
+  background: hsl(0, 100%, 98%) url(images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section#coming-soon {
+  background-image: url(images/hero-desktop.jpg);
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.c-s__main {
+  display: flex;
+  flex-direction: column;
+  padding: 6.4rem 22rem 16.2rem 16rem;
+}
+
+.c-s__main--logo {
+  height: 3.3rem;
+  width: 15.6rem;
+  margin-bottom: 6.4rem;
+}
+
+.c-s__main--text {
+  width: 44.4rem;
+  color: var(--desaturated-red);
+}
+
+.c-s__main--text h1 {
+  font-size: 6.4rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 3.2rem;
+  letter-spacing: 1rem;
+}
+
+.c-s__main--text h1 span {
+  color: var(--grayish-red-d);
+  font-weight: 500;
+}
+
+.c-s__main--text p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  margin-bottom: 4rem;
+}
+
+.s-c__main--form {
+  position: relative;
+  height: 5.6rem;
+  width: 44.5rem;
+  border-radius: 2.8rem;
+}
+
+.s-c__main--form__input {
+  background-color: transparent;
+  outline: none;
+  border-radius: inherit;
+  border: 1px solid var(--desaturated-red);
+  height: inherit;
+  width: 44rem;
+  padding: 2rem;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--desaturated-red);
+}
+
+.s-c__main--form button {
+  background: linear-gradient(135deg, var(--gradient-pink-red));
+  border: none;
+  border-radius: inherit;
+  height: inherit;
+  width: 10rem;
+  cursor: pointer;
+  box-shadow: 0 15px 20px rgba(198, 110, 110, 0.25);
+  transform: scale(1.01);
+}
+
+.s-c__main--form button:hover {
+  background: hsl(0, 80%, 86%);
+  transform: scale(1.05);
+}
+
+input:focus {
+  outline: none;
+}
+
+.error, .error-message {
+  position: absolute;
+  right: 12rem;
+  bottom: 1rem;
+  display: none;
+}
+
+.error-message {
+  font-size: 1.3rem;
+  color: var(--soft-red);
+  left: 2rem;
+  bottom: -3rem;
+}
+
+/* Wrong Email Status */
+.s-c__main--form.invalid .s-c__main--form__input {
+  border: 2px solid var(--soft-red);
+}
+
+.s-c__main--form.invalid .error, 
+.s-c__main--form.invalid .error-message {
+  display: block;
+}
+
+
+#btn {
+  position: absolute;
+  right: 0;
+}
+
+.c-s__main--mobile {
+  display: none;
+}
+
+
+/*-*- Footer -*-*/
+.attribution {
+  font-size: 1.3rem;
+  color: var(--grayish-red-d);
+  text-align: center;
+  margin: 5rem 0;
+}
+
+.attribution a {
+  text-decoration: none;
+  color: var(--grayish-red-d);
+}
+
+/*-*-*-*-*- Max-Width: 1250px -*-*-*-*-*/
+@media screen and (max-width: 1250px){
+  section#coming-soon {
+    background-image: none;
+  }
+
+  .c-s__main {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 6.4rem 0 8rem;
+  }
+
+  .c-s__main--mobile {
+    display: inline-block;
+    object-fit: contain;
+    margin-bottom: 6rem;
+  }
+
+  .c-s__main--text {
+    width: 80rem;
+  }
+
+  .c-s__main--text p {
+    width: 60rem;
+    margin: 0 auto 4rem;
+  }
+
+  .error, .error-message {
+    right: 11rem;
+  }
+  
+  .error-message {
+    text-align: left
+    ;
+  }
+  
+} 
+
+/*-*-*-*-*- Max-Width: 860px -*-*-*-*-*/
+@media screen and (max-width: 860px){
+  .c-s__main--text h1 {
+    font-size: 5.2rem;
+    margin-bottom: 1.6rem;
+  }
+  .c-s__main--text {
+    width: 60rem;
+  }
+  .c-s__main--text p {
+    margin-bottom: 3.2rem;
+  }
+}
+
+/*-*-*-*-*- Max-Width: 620px -*-*-*-*-*/
+@media screen and (max-width: 620px){
+  .c-s__main {
+    padding-top: 3.2rem;
+    padding-bottom: 8rem;
+  }
+  
+  .c-s__main--logo {
+    margin-bottom: 3.2rem;
+  }
+  
+  .c-s__main--mobile {
+    margin-bottom: 6.4rem;
+  }
+
+  .c-s__main--text {
+    width: auto;
+  }
+
+  .c-s__main--text h1 {
+  font-size: 4rem;
+  width: 50rem;
+  margin: 0 auto 1.6rem;
+}
+
+.c-s__main--text p {
+  width: 40rem;
+}
+
+.s-c__main--form {
+  height: 4.8rem;
+  width: 31.5rem;
+}
+
+.s-c__main--form__input {
+  width: 31rem;
+  padding: 2rem;
+  font-size: 1.4rem;
+}
+
+
+}
+
+/*-*-*-*-*- Max-Width: 480px -*-*-*-*-*/
+@media screen and (max-width: 480px){
+.c-s__main--logo {
+  align-self: flex-start;
+  margin-left: 3.2rem;
+}
+
+  .c-s__main--text h1 {
+  width: 30rem;
+  letter-spacing: 2rem;
+}
+
+.c-s__main--text p {
+  font-size: 1.4rem;
+  width: 30rem;
+}
+}
