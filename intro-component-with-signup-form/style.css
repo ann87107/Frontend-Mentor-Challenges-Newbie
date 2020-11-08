@@ -1,0 +1,261 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*-*-*-*-*-*-*-*- Utility Components -*-*-*-*-*-*-*-*/
+:root {
+  font-size: 62.5%;
+  /* Color */
+  /* Primary */
+  --red: hsl(0, 100%, 74%);
+  --green: hsl(154, 59%, 51%);
+  --green-m: rgba(56, 204, 140, 0.5);
+  --violet: hsl(248, 32%, 49%);
+  /* Neutral */
+  --dark-blue: hsl(249, 10%, 26%); 
+  --dark-blue-m: rgba(62, 60, 73, 0.4);
+  --grayish-blue: hsl(246, 25%, 77%);
+  --white: #fff;
+}
+
+/*-*-*-*-*-*-*-*- Main Styling -*-*-*-*-*-*-*-*/
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--red) url(images/bg-intro-desktop.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  color: var(--white);
+}
+
+button {
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+section#sign-up-section {
+  margin: 12rem 3rem 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/*-*-*-*-*- Intro -*-*-*-*-*/
+.intro {
+  max-width: 52.5rem;
+  margin-right: 4.5rem;
+}
+
+.intro--title {
+  font-size: 5rem;
+  line-height: 1.3;
+  margin-bottom: 2.2rem;
+}
+
+.intro--para {
+  font-size: 1.6rem;
+}
+
+/*-*-*-*-*- Form -*-*-*-*-*/
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+button.sign-up__btn {
+  background-color: var(--violet);
+  border: 0;
+  border-radius: 1rem;
+  height: 6rem;
+  width: 54rem;
+  box-shadow: 0 7px var(--dark-blue-m);
+  margin-bottom: 2.4rem;
+}
+
+.sign-up__btn span {
+  font-weight: 700;
+}
+
+.sign-up__form {
+  background-color: var(--white);
+  border-radius: 1rem;
+  width: 54rem;
+  padding: 4rem;
+  box-shadow: 0 7px var(--dark-blue-m);
+}
+
+.sign-up__form input {
+  display: block;
+  border-radius: 0.5rem;
+  border: 1px solid var(--grayish-blue);
+  outline: none;
+  height: 5.6rem;
+  width: 46rem;
+  margin-bottom: 4rem;
+  padding-left: 3rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--dark-blue);
+  letter-spacing: 1px;
+}
+
+.sign-up__form  div {
+  position: relative;
+}
+
+.sign-up__form--error {
+  position: absolute;
+  top: 1.6rem;
+  right: 2rem;
+  visibility: hidden;
+}
+
+.sign-up__form-control small  {
+  font-size: 1.1rem;
+  color: var(--red);
+  font-style: italic;
+  position: absolute;
+  bottom: -2.5rem;
+  right: 0.2rem;
+  visibility: hidden;
+}
+
+.sign-up__form-control.error input {
+  border: 1px solid var(--red);
+  color: var(--red);
+}
+
+.sign-up__form-control.success input {
+  border: 1px solid var(--green);
+}
+
+.sign-up__form-control.error small,
+.sign-up__form-control.error .sign-up__form--error {
+  visibility: visible;
+}
+
+button.sign-up__submit {
+  background-color: var(--green);
+  border: 0;
+  border-radius: 1rem;
+  height: 5.6rem;
+  width: 46rem;
+  box-shadow: inset 0 -5px var(--green-m);
+  margin-bottom: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sign-up__form--details {
+  color: var(--grayish-blue);
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.sign-up__form--details a {
+  color: var(--red);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+/*-*-*-*-*- Footer -*-*-*-*-*/
+.attribution {
+  font-size: 1.3rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.attribution a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+/*-*-*-*-*-*-*-*- Max-width: 1169px -*-*-*-*-*-*-*-*/
+@media screen and (max-width: 1169px){
+  .intro {
+    margin-right: 0;
+  }
+}
+
+/*-*-*-*-*-*-*-*- Max-width: 1124px -*-*-*-*-*-*-*-*/
+@media screen and (max-width: 1124px){
+  section#sign-up-section {
+    margin: 8.8rem 3rem 8rem;
+  }
+
+  .intro--title {
+    font-size: 4.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .intro--para {
+    text-align: center;
+    margin-bottom: 4.4rem;
+  }
+
+  button.sign-up__btn {
+    margin-bottom: 3.5rem;
+  }
+}
+/*-*-*-*-*-*-*-*- Max-width: 600px -*-*-*-*-*-*-*-*/
+@media screen and (max-width: 600px){
+  .intro {
+    width: 40rem;
+  }
+
+  .intro--title {
+    font-size: 3.5rem;
+  }
+
+  button.sign-up__btn {
+    width: 40rem;
+    margin: 0 auto 3.5rem;
+  }
+
+  .sign-up__form {
+    width: 40rem;
+    padding: 2.4rem;
+  }
+
+  .sign-up__form input,
+  button.sign-up__submit {
+    width: 35.2rem;
+  }
+}
+
+@media screen and (max-width: 440px){
+  .intro--title {
+    font-size: 2.8rem;
+  }
+
+  button.sign-up__btn {
+    height: 8.8rem;
+    width: 32.7rem;
+    padding: 0 8rem;
+    line-height: 1.8;
+  }
+
+  .sign-up__form {
+    width: 32.7rem;
+  }
+
+  .sign-up__form input,
+  button.sign-up__submit {
+    width: 27.9rem;
+  }
+
+  
+}

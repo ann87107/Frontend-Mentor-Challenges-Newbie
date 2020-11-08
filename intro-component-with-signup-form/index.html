@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicn -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+</head>
+<body>
+  <!-- Sign Up Section-->
+  <section id="sign-up-section">
+    <!-- Intro -->
+    <div class="intro">
+      <h1 class="intro--title">Learn to code by watching others</h1>
+      <p class="intro--para">See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
+    </div>
+
+    <!-- Form -->
+    <div class="sign-up">
+      <button class="sign-up__btn"><small>Try it free 7 days</small> then $20/mo. thereafter</button>
+      <form id="sign-up__form" class="sign-up__form">
+        
+        <div class="sign-up__form-control"> 
+          <input title="fName" type="text" id="fName" name="first-name" placeholder="First Name">
+          <img class="sign-up__form--error" src="images/icon-error.svg" alt="error">
+          <small id="fName-message"></small>
+        </div>
+
+        <div class="sign-up__form-control">
+          <input title="lName" type="text" id="lName" name="last-name" placeholder="Last Name">
+          <img class="sign-up__form--error" src="images/icon-error.svg" alt="error">
+          <small id="lName-message"></small>
+        </div>
+
+        <div class="sign-up__form-control">
+          <input title="emial" type="text" id="email" name="email" placeholder="Email Address">
+          <img class="sign-up__form--error" src="images/icon-error.svg" alt="error">
+          <small id="email-message"></small>
+        </div>
+
+        <div class="sign-up__form-control">
+          <input title="password" type="password" id="password" name="password" placeholder="Password" autocomplete="on">
+          <img class="sign-up__form--error" src="images/icon-error.svg" alt="error">
+          <small id="password-message"></small>
+        </div>
+
+        <button type="submit" id="sign-up__submit" class="sign-up__submit">Claim your free trial</button>
+        <p class="sign-up__form--details">By clicking the button, you are agreeing to our <a>Terms and Services</a></p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/ann87107" target="_blank">Anyen</a>.
+    </p>
+  </footer>
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
