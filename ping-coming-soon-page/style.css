@@ -22,7 +22,7 @@
   --white: #fff;
 }
 
-button, input:focus {
+button, .email:focus {
   outline: none;
 }
 
@@ -68,11 +68,11 @@ form {
   margin-bottom: 9.4rem;
 }
 
-.coming-soon__form--input {
+.c-s__form--input {
   position: relative;
 }
 
-input {
+.email {
   display: block;
   height: 5.6rem;
   width: 42rem;
@@ -84,7 +84,7 @@ input {
   margin-right: 1.6rem;
 }
 
-input::placeholder {
+.email::placeholder {
   color: var(--pale-blue);
 }
 
@@ -98,7 +98,11 @@ input::placeholder {
   display: none;
 }
 
-.coming-soon__form.error .error-message {
+.c-s__form--input.error .email {
+  border-color: var(--light-red);
+}
+
+.c-s__form--input.error .error-message {
   display: block;
 }
 
@@ -124,14 +128,14 @@ button:hover {
   margin-bottom: 7.2rem;
 }
 
-.coming-soon__icons {
+.c-s__icons {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 12rem;
 }
 
-.coming-soon__icons--icon {
+.c-s__icons--icon {
   border: 1px solid var(--pale-blue);
   border-radius: 50%;
   height: 3.1rem;
@@ -144,16 +148,16 @@ button:hover {
   transition: all 0.3s ease-in-out;
 }
 
-.coming-soon__icons--icon:hover {
+.c-s__icons--icon:hover {
   background-color: var(--blue);
   border: 1px solid var(--blue);
 }
 
-.coming-soon__icons--icon:hover i {
+.c-s__icons--icon:hover i {
   color: var(--white);
 }
 
-.coming-soon__icons i {
+.c-s__icons i {
   font-size: 1.5rem;
   color: var(--blue);
   transition: all 0.3s ease-in-out;
@@ -196,7 +200,7 @@ button:hover {
     margin-bottom: 8.4rem;
   }
 
-  input,
+  .email,
   button {
     height: 5rem;
     width: 35rem;
@@ -210,7 +214,7 @@ button:hover {
     margin: 0 5rem;
   }
 
-  .coming-soon__form.error #email {
+  .c-s__form--input.error .email {
     margin-bottom: 3rem;
    }
   
@@ -234,7 +238,7 @@ button:hover {
     font-size: 1.4rem;
   }
 
-  input,
+  .email,
   button {
     height: 4.5rem;
     width: 30rem;
@@ -274,7 +278,7 @@ button:hover {
     margin-bottom: 9.2rem;
   }
 
-  input,
+  .email,
   button {
     height: 4rem;
     width: 28rem;
@@ -295,7 +299,3 @@ button:hover {
   font-size: 1rem;
   }
 }
-
-
-
-
