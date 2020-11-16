@@ -27,9 +27,9 @@
     <h1><span> We are launching</span> soon!</h1>
     <p>Subscribe and get notified</p>
 
-    <form id="form" class="coming-soon__form">
-      <div class="coming-soon__form--input">
-        <input id="email" type="text" name="email" placeholder="Your email address...">
+    <form id="form" class="c-s__form">
+      <div class="c-s__form--input">
+        <input class="email" type="text" name="email" placeholder="Your email address...">
         <small class="error-message"><em>Please provide a valid email address</em></small>
       </div>
       <button type="submit">Notify Me</button>
@@ -37,14 +37,14 @@
 
     <img src="images/illustration-dashboard.png" alt="Dashboard">
 
-    <div class="coming-soon__icons">
-      <div class="coming-soon__icons--icon">
+    <div class="c-s__icons">
+      <div class="c-s__icons--icon">
         <i class="fab fa-facebook-f"></i>
       </div>
-      <div class="coming-soon__icons--icon">
+      <div class="c-s__icons--icon">
         <i class="fab fa-instagram"></i>
       </div>
-      <div class="coming-soon__icons--icon">
+      <div class="c-s__icons--icon">
         <i class="fab fa-twitter"></i>
       </div>  
     </div>
@@ -60,23 +60,24 @@
 
   <script>
     const form = document.getElementById("form"),
-    email = document.getElementById("email");
+    emailDiv = document.querySelector(".c-s__form--input"),
+    email = document.querySelector(".email");
 
     function checkEmail(){
       const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       if(!re.test(email.value.trim())){
-        form.className = "coming-soon__form error"
+        emailDiv.className = "c-s__form--input error"
       }
     }
 
     form.addEventListener("submit", e=>{
       e.preventDefault();
-      form.className = "coming-soon__form";
+      emailDiv.className = "c-s__form--input";
       checkEmail();
     })
 
     email.addEventListener("click", ()=>{
-      form.className = "coming-soon__form";
+      emailDiv.className = "c-s__form--input";
     })
 
   </script>
