@@ -38,6 +38,7 @@ body,
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: var(--blue-d);
 }
 
 #coming-soon img:first-of-type {
@@ -54,6 +55,7 @@ body,
 
 #coming-soon h1 span {
   font-weight: 300;
+  color: var(--gray);
 }
 
 #coming-soon p:first-of-type {
