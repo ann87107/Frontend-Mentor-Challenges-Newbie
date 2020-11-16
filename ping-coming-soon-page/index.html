@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <title>Frontend Mentor | Ping coming soon page</title>
+
+</head>
+<body>
+
+  <section id="coming-soon">
+    <img src="images/logo.svg" alt="Logo">
+    <h1><span> We are launching</span> soon!</h1>
+    <p>Subscribe and get notified</p>
+
+    <form id="form" class="coming-soon__form">
+      <div class="coming-soon__form--input">
+        <input id="email" type="text" name="email" placeholder="Your email address...">
+        <small class="error-message"><em>Please provide a valid email address</em></small>
+      </div>
+      <button type="submit">Notify Me</button>
+    </form>
+
+    <img src="images/illustration-dashboard.png" alt="Dashboard">
+
+    <div class="coming-soon__icons">
+      <div class="coming-soon__icons--icon">
+        <i class="fab fa-facebook-f"></i>
+      </div>
+      <div class="coming-soon__icons--icon">
+        <i class="fab fa-instagram"></i>
+      </div>
+      <div class="coming-soon__icons--icon">
+        <i class="fab fa-twitter"></i>
+      </div>  
+    </div>
+
+    <p>&copy; Copyright Ping. All rights reserved.</p>
+  </section>
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="https://github.com/ann87107" target="_blank">Anyen</a>.
+    </p>
+  </footer>
+
+  <script>
+    const form = document.getElementById("form"),
+    email = document.getElementById("email");
+
+    function checkEmail(){
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if(!re.test(email.value.trim())){
+        form.className = "coming-soon__form error"
+      }
+    }
+
+    form.addEventListener("submit", e=>{
+      e.preventDefault();
+      form.className = "coming-soon__form";
+      checkEmail();
+    })
+
+    email.addEventListener("click", ()=>{
+      form.className = "coming-soon__form";
+    })
+
+  </script>
+</body>
+</html>
