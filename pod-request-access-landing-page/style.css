@@ -1,0 +1,359 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Utility Components */
+:root {
+  font-size: 62.5%;
+
+  /* Colors */
+  --red: #FB3E3E;
+  --green: #54E6AF;
+  --green-l: #B3FFE2;
+  --grayish-blue: #C2CBE5;
+  --grayish-blue-m: #5A668A;
+  --grayish-blue-d: #2C344B;
+  --black: #121725;
+  --black-o: rgba(18, 23, 37, 0.9);
+  --white: #fff;
+}
+
+body {
+  background: var(--black) url(./image/bg-host.jpg);
+  background-repeat: no-repeat;
+  background-position: right center;
+  font-family: "Chivo", sans-serif;
+  padding: 10.2rem 0 0 16.5rem;
+}
+
+h1, p {
+  font-weight: 300;
+}
+
+main {
+  position: relative;
+}
+
+.logo {
+  height: 5.6rem;
+  width: 13.5rem;
+  object-fit: contain;
+}
+
+.bg {
+  position: absolute;
+  right: 0;
+}
+
+.bg div {
+  position: relative;
+}
+
+.bg img {
+  position: absolute;
+  top: 60rem;
+  right: 0;
+  z-index: 1;
+}
+
+.intro {
+  background: var(--black);
+  height: 55rem;
+  width: 72.3rem;
+  padding: 8.8rem 7rem 0 0;
+  margin-top: 12rem;
+}
+
+.intro h1 {
+  color: var(--white);
+  font-size: 5.2rem;
+  text-transform: uppercase;
+  margin-bottom: 2.4rem;
+}
+
+.intro h1 span {
+  color: var(--green);
+}
+
+.intro p {
+  color: var(--grayish-blue);
+  font-size: 1.8rem;
+  line-height: 1.5;
+  width: 44.5rem;
+  margin-bottom: 4rem;
+}
+
+.intro__form {
+  border-radius: 2.8rem;
+  height: 5.6rem;
+  width: 42.7rem;
+  position: relative;
+  margin-bottom: 6.4rem;
+}
+
+.intro__form input {
+  background-color: var(--grayish-blue-d);
+  border: none;
+  border-radius: inherit;
+  height: inherit;
+  width: inherit;
+  padding-left: 3rem;
+  font-size: 1.4rem;
+  color: var(--grayish-blue);
+}
+
+input:focus {
+  outline: none;
+}
+
+.intro__form button {
+  cursor: pointer;
+  border: none;
+  border-radius: inherit;
+  height: 4.8rem;
+  width: 16.2rem;
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--black);
+  background-color: var(--green);
+  transition: background-color 0.35s ease-in-out;
+}
+
+.intro__form button:hover {
+  background-color: var(--green-l);
+}
+
+.error-message {
+  color: var(--red);
+  font-size: 1.2rem;
+  font-weight: 700;
+  position: absolute;
+  left: 3rem;
+  bottom: -2rem;
+  display: none;
+}
+
+.intro__form.error .error-message {
+  display: block;
+}
+
+.intro__icons {
+  display: flex;
+  align-items: center;
+}
+
+.intro__icons img {
+  margin-right: 4rem;
+  object-fit: contain;
+}
+
+.intro__icons .spotify {
+  height: 2.9rem;
+  width: 9.6rem;
+}
+
+.intro__icons .apple {
+  height: 2.9rem;
+  width: 7.8rem;
+}
+
+.intro__icons .google {
+  height: 1.8rem;
+  width: 12.5rem;
+}
+
+.intro__icons .pocket {
+  height: 2.6rem;
+  width: 12.9rem;
+}
+
+footer {
+  color: var(--white);
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 15rem 0 2rem;
+}
+
+footer a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* max-width: 1060 */
+@media screen and (max-width: 1060px){
+  body {
+    background: var(--black) url(./image/bg-host-tablet.jpg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    padding: 5rem 0 0 8rem;
+  }
+  .bg img {
+    top: 80rem;
+    right: 70rem;
+  }
+}
+
+/* max-width: 780 */
+@media screen and (max-width: 780px){
+  body {
+    padding: 3rem 0 0 3rem;
+  }
+
+  .intro {
+    width: 62rem;
+    padding: 8.8rem 2rem 0 0;
+    margin-top: 15rem;
+  }
+  
+  .intro h1 {
+    font-size: 4.8rem;
+    margin-bottom: 3rem;
+  }
+
+  .intro__icons img {
+    transform: scale(0.9);
+  }
+}
+
+
+/* max-width: 650 */
+@media screen and (max-width: 650px){
+  body {
+    padding: 0;
+  }
+  
+  .logo {
+    margin: 3rem 0 0 3rem;
+  }
+
+  .bg img {
+    display: none;
+  }
+
+  .intro {
+    width: 50rem;
+    height: 53rem;
+    padding: 8.8rem 2rem 0 3rem;
+    margin-top: 15rem;
+  }
+  
+  .intro h1 {
+    font-size: 3.5rem;
+  }
+    
+  .intro p {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .intro__icons img {
+    transform: scale(0.8);
+    margin-right: 0rem;
+  }
+
+  footer {
+    margin: 5rem 0 3rem;
+  }
+}
+
+@media screen and (max-width: 490px){
+  body {
+    background-image: linear-gradient(var(--black-o), var(--black-o)), url(./image/bg-host-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+  
+  .logo {
+    display: block;
+    margin: 6.2rem auto 7.4rem;
+  }
+
+  .intro {
+    background-color: transparent;
+    text-align: center;
+    height: 40rem;
+    width: auto;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-auto-rows: max-content;
+    justify-content: center;
+  }
+
+  .intro h1 {
+    font-size: 2.6rem;
+    width: auto;
+    margin-bottom: 1.6rem;
+  }
+    
+  .intro p {
+    font-size: 1.5rem;
+    width: 32rem;
+    margin: auto;
+    margin-bottom: 3.2rem;
+  }
+
+  .intro__form {
+    grid-row: 4/5;
+    width: 33rem;
+    height: auto;
+    margin: auto;
+  }
+
+  .intro__form input {
+    height: 5rem;
+    width: inherit;
+    margin-bottom: 1.6rem;
+  }
+
+  .intro__form button {
+    height: 5rem;
+    width: inherit;
+    position: initial;
+  }
+
+  .intro__icons {
+    margin: auto;
+    width: 35rem;
+    margin-bottom: 4.8rem;
+    justify-content: space-around;
+  }
+
+  .intro__icons img {
+    transform: scale(1);
+  }
+
+  .intro__icons .spotify {
+    height: 1.6rem;
+    width: 5.5rem;
+  }
+
+  .intro__icons .apple {
+    height: 1.7rem;
+    width: 4.6rem;
+  }
+
+  .intro__icons .google {
+    height: 1.1rem;
+    width: 7.9rem;
+  }
+
+  .intro__icons .pocket {
+    height: 1.5rem;
+    width: 7.7rem;
+    margin-right: 0;
+  }
+
+  footer {
+    margin: 15rem 0 3rem;
+  }
+}
+

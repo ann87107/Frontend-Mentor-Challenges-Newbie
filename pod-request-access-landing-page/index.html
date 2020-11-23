@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Main Css -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+  <title>Frontend Mentor | Pod request access landing page</title>
+</head>
+<body>
+  <main>
+    <img class="logo" src="./image/logo.svg" alt="Logo">
+    <div class="bg">
+      <div>
+        <img src="./image/bg-pattern-dots.svg" alt="Pattern">
+      </div>
+    </div>
+
+    <div class="intro">
+      <h1><span>Publish your podcasts</span> everywhere.</h1>
+      <p>Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts and more!</p>
+      
+      <form id="form" class="intro__form">
+        <input id="email" type="text" name="email" placeholder="Email address" aria-label="email">
+        <button type="submit">Request Access</button>
+        <small class="error-message">Opps! Please check your email</small>
+      </form>
+
+      <div class="intro__icons">
+        <img class="spotify" src="./image/spotify.svg" alt="Spotify">
+        <img class="apple" src="./image/apple-podcast.svg" alt="Apple-podcast">
+        <img class="google" src="./image/google-podcasts.svg" alt="Google-podcasts">
+        <img class="pocket" src="./image/pocket-casts.svg" alt="Pocket-casts">
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="https://github.com/ann87107" target="_blank">Anyen</a>.
+    </p>
+  </footer>
+
+  <script>
+    const form = document.getElementById("form"),
+     email = document.getElementById("email");
+
+    email.addEventListener("click", () => {
+      setTimeout(()=>{
+        form.classList = "intro__form";
+      }, 1500)
+      
+    })
+    
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      form.classList = "intro__form";
+      checkEmail();    
+    })
+
+    function checkEmail(){
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if(!re.test(email.value.trim())){
+        form.classList = "intro__form error";
+      } else {
+        form.classList = "intro__form";
+      }
+    }
+
+  </script>
+</body>
+</html>
